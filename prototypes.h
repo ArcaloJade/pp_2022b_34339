@@ -1,3 +1,5 @@
+#pragma once
+
 // Libraries
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +8,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-// Defines
+// Definitions
 #define COLOR_RED     "\x1b[31m"
 #define COLOR_GREEN   "\x1b[32m"
 #define COLOR_YELLOW  "\x1b[33m"
@@ -20,7 +22,7 @@ const int TYPE_QUANTITY = 3;
 char * red = "255 0 0";
 char * green = "0 255 0";
 char * blue = "0 0 255";
-char * white = "255 255 255";
+char * white = "255 255 255"; // This color shouldn't appear in the Pokemon matrix. If it does, there is an error to be solved.
 
 // Extras
 struct Pokemon
