@@ -167,3 +167,34 @@ void print_ppm(struct Pokemon ** matrix, unsigned int row, unsigned int col)
     }
     printf("\n");
 }
+
+void create_ppm(struct Pokemon ** matrix, unsigned int row, unsigned int col, char * filename)
+{
+    FILE * fileptr;
+    fileptr = fopen(filename, "w+");
+    fprintf(fileptr, "P3\n%u\n%u\n255\n", col, row);
+    for (int i = 0; i < row; ++i)
+    {
+        for (int j = 0; j < col; ++j)
+        {
+            int type = matrix[i][j].type;
+            if (type == 0)
+            {
+                fprintf(fileptr, "%s ", red);
+            }
+            else if (type == 1)
+            {
+                fprintf(fileptr, "%s ", blue);
+            }
+            else if (type == 2)
+            {
+                fprintf(fileptr, "%s ", green);
+            }
+            else
+            {
+                fprintf(fileptr, "%s ", white); // If any pixels are printed with the color white, there is an error.
+            }
+        }
+    }
+    fclose(fileptr);
+}

@@ -52,3 +52,4 @@ enum pokemon_type random_type(void);
 void attack(struct Pokemon *, struct Pokemon *);
 void play_turn(struct Pokemon **, unsigned int, unsigned int);
 void print_ppm(struct Pokemon **, unsigned int, unsigned int);
+void create_ppm(struct Pokemon **, unsigned int, unsigned int, char *);

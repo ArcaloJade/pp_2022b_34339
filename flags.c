@@ -11,11 +11,13 @@ void help(void)
     printf(COLOR_YELLOW "   -n " COLOR_RESET ">> Indicates the printing interval the user wants for the PPM image. Must be an int. If this value is <= 0, only the last generated image will be printed. DEFAULT: 1.\n");
     printf(COLOR_YELLOW "   -t " COLOR_RESET ">> Asks the user to indicate the amount of turns that will be played. Must be equal to or higher than 0, as well as >= n. DEFAULT: 1.\n");
     printf(COLOR_GREEN "\nGAME INSTRUCTIONS:\n" COLOR_RESET);
-    printf("    -   Each square in the PPM image represents a " COLOR_YELLOW "Pokemon.\n" COLOR_RESET);
+    printf("    -   Each square in the PPM image represents a " COLOR_YELLOW "Pokemon" COLOR_RESET ".\n");
     printf("    -   There are three types of Pokemon: " COLOR_RED "FIRE" COLOR_RESET ", " COLOR_BLUE "WATER" COLOR_RESET " and " COLOR_GREEN "GRASS" COLOR_RESET ".\n");
     printf("    -   Each element has a " COLOR_YELLOW "weakness" COLOR_RESET ": FIRE deals higher damage to GRASS, GRASS to WATER, and WATER to FIRE.\n");
     printf("    -   If a Pokemon is attacking one which isn't weak to the attacker's element, the attack is weakened.\n");
-    printf("    -   When a Pokemon is " COLOR_YELLOW "defeated" COLOR_RESET ", it revives as one of the same element of the attacker.\n\n");
+    printf("    -   When a Pokemon is " COLOR_YELLOW "defeated" COLOR_RESET ", it revives as one of the same element of the attacker.\n");
+    printf(COLOR_GREEN "\nRUNNING THE GAME:\n" COLOR_RESET);
+    printf("        Running the game is quite simple. For example, if the compiled program is named 'tp1':\n        ./tp1 -w -H -s\n        will ask the user for a width, height and seed.\n\n");
 }
 
 unsigned int get_width(void)

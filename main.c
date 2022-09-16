@@ -9,6 +9,7 @@ int main(int argc, char * argv[])
     int n = 1;
     unsigned int turns = 1;
     unsigned int counter = 0;
+    int name_iter = 0;
     if (argc > 6)
     {
         puts("Too many arguments were inserted.");
@@ -52,14 +53,19 @@ int main(int argc, char * argv[])
     {
         if ((n > 0) && (counter % n == 0))
         {
-            print_ppm(matrix, height, width);
+            char filename[20];
+            sprintf(filename, "%i.ppm", name_iter);
+            create_ppm(matrix, height, width, filename);
+            ++name_iter;
         }
         play_turn(matrix, height, width);
         ++counter;
     }
     if (n <= 0 || turns == 0) // If the user only wants to print the last image OR there are no simulated turns.
     {
-        print_ppm(matrix, height, width);
+        char * filename;
+        sprintf(filename, "pokemons%u.ppm", name_iter);
+        create_ppm(matrix, height, width, filename);
     }
     printf("\n");
     free_matrix(matrix, height);
